@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Paper Slider Demo - html5beta.com</title>
+<meta name="description" content="Basic Dev Template">
+<meta name="description" content="Basic Dev Template">
+
+<!-- css -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" media="all" href="http://zxdong262.github.io/zui/css/zui.css" />
+<style>
+body {
+	font-family:'Open Sans', Arial, Helvetica, sans-serif
+}
+h1, h2 {
+	font-weight:300;
+}
+#wrapper {
+	padding:20px 0;
+	margin:0 auto;
+	width:800px;
+}
+.papers-demo {
+	position:relative;
+	width:360px;
+	height:480px;
+	margin-left:auto;
+	margin-right:auto;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+
+
+/* paper slider css*/
+.paper-slide {
+	background:#f2ffff;
+	box-shadow:0 0 15px rgba(0,0,0,.3);
+}
+.ps-nav {
+	display:block;
+	width:2em;
+	height:2em;
+	border:1px solid #aaa;
+	background:#ddd;
+	line-height:2em;
+	text-align:center;
+	position:absolute;
+	top:50%;
+	margin-top:-1em;
+	border-radius:2em;
+}
+.ps-nav-prev {
+	left:-2.5em;
+}
+.ps-nav-next {
+	right:-2.5em;
+}
+.ps-nav:hover {
+	color:#eee;
+	background:#08c;
+}
+</style>
+</head>
+
+<!-- site content --> 
+<div id="wrapper">
+  <div class="mg pd borderb aligncenter">
+    <a class="btn btn-c btn-corner btn-inline with-icon-info" href="http://html5beta.com/jquery-2/jquery-paper-slider/">docs</a>
+    <a class="btn btn-c btn-corner btn-inline with-icon-star" href="http://html5beta.com/">blog</a>
+    <a class="btn btn-c btn-corner btn-inline with-icon-arrow-r" href="https://github.com/zxdong262/paper-slider.js">view at github</a>
+  </div>
+  <p class="aligncenter">
+    <span class="iblock">experiment: </span>
+    <a href="javascript:;" class="btn btn-b btn-corner btn-inline btn-share btn-share-facebook with-icon-arrow-r" id="o-btn-cs">change the paper div size</a>
+    <a href="javascript:;" class="btn btn-d btn-inline btn-share btn-share-facebook with-icon-alert" id="o-btn-des">destroy slider</a>
+    <a href="javascript:;" class="btn btn-b btn-inline btn-share btn-share-facebook with-icon-plus" id="o-btn-ns">add a new slider</a>
+  </p>
+
+  <p class="pb mg">
+  &nbsp;
+  </p>
+
+  
+  <!-- paper slider units wrapper-->
+  <div class="mgtb papers-demo hide" id="papers1">
+     
+    <!-- one paper slider unit -->
+    <div>
+      <h1 class="aligncenter">Paper Slider Demo</h1>
+      <p class="aligncenter">a "paper effect" slider jQuery plugin .</p>
+    </div>
+    <!-- /one paper slider unit -->
+    
+    <!-- one paper slider unit -->
+    <div>
+      <h2 class="aligncenter">Paper Slider </h2>
+      <ul class="list">
+        <li><a class="li-head ps-link" href="javascript:;" data-ps-page="0">back to page 1</a></li>
+        <li><a class="li-head ps-link" href="javascript:;" data-ps-page="1">current page</a></li>
+        <li><a class="li-head ps-link" href="javascript:;" data-ps-page="2">page 3</a></li>
+        <li><a class="li-head ps-link" href="javascript:;" data-ps-page="3">page 4</a></li>
+        <li><a class="li-head ps-link" href="javascript:;" data-ps-page="4">page 5</a></li>
+      </ul>
+    </div>
+    <!-- /one paper slider unit -->
+    
+    <!-- one paper slider unit -->
+    <div>
+      <h2 class="aligncenter">page 3</h2>
+      <p class="aligncenter">
+        <a class="btn btn-b btn-inline ps-link" href="javascript:;" data-ps-page="0">back to page 1</a>
+        <a class="btn btn-c btn-inline ps-link" href="javascript:;" data-ps-page="1">back to page 2</a>
+      </p>
+    </div>
+    <!-- /one paper slider unit -->
+    
+    <!-- one paper slider unit -->
+    <div>
+      <h2 class="aligncenter">page 4</h2>
+      <p class="aligncenter">
+        <a class="btn btn-b btn-inline ps-link" href="javascript:;" data-ps-page="0">back to page 1</a>
+        <a class="btn btn-c btn-inline" href="javascript:;" data-ps-page="1">back to page 2</a>
+      </p>
+    </div>
+    <!-- /one paper slider unit -->
+    
+    <!-- one paper slider unit -->
+    <div>
+      <h2 class="aligncenter">page 5</h2>
+      <p class="aligncenter">
+        <a class="btn btn-b btn-inline ps-link" href="javascript:;" data-ps-page="0">back to page 1</a>
+        <a class="btn btn-c btn-inline" href="javascript:;" data-ps-page="1">back to page 2</a>
+      </p>
+    </div>
+    <!-- /one paper slider unit -->
+    
+  </div>
+  <!-- /paper slider units wrapper -->
+
+
+</div>
+<div class="mgb aligncenter border bg-highlight pd" id="social"></div>
+<!-- end site content --> 
+
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.1.min.js"></script> 
+<script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script> 
+<script src="http://zxdong262.github.io/zui/js/zui.js"></script>
+<script src="js/jquery.paper-slider.js"></script> 
+<script>
+//scripts
+$(document).ready(function() {
+	
+	//social
+	var social = [
+	    {
+			name: 'facebook'
+			,showName:'facebook'
+			,forward: true
+			,btn: 'a'
+			,icon: 'arrow-r'
+		}
+		,{
+			name: 'twitter'
+			,showName:'twitter'
+			,forward: true
+			,btn: 'a'
+			,icon: 'arrow-r'
+		}
+		,{
+			name: 'sinaweibo'
+			,showName:'weibo'
+			,forward: true
+			,btn: 'a'
+			,icon: 'arrow-r'
+		}
+		,{
+			name: ''
+			,showName:'more'
+			,forward: false
+			,btn: 'c'
+			,icon: 'plus'
+		}
+	]
+	,ht = '<span class="iblock">share to &raquo; </span>'
+	$.each(social, function(index, value) {
+		var url = encodeURI('http://api.addthis.com/oexchange/0.8/' +
+		(value.forward?'forward/' + value.name + '/' : '') +
+		'offer?url=' + location.href +
+		'?title=' + $('title').text()
+		)
+		ht += '<a href="' + url +
+		'" class="btn btn-' +
+		value.btn +
+		' btn-inline btn-share with-icon-' +
+		value.icon +
+		' icon-pos-right">' + value.showName + '</a>'
+	})
+	$('#social').html(ht)
+	
+	//initUI
+	initUI()
+	
+	//init slider 1
+  	var defaults = {
+  		speed: 500
+  		,timer: 4000
+  		,autoSlider: true
+  		,hasNav: true
+  		,pauseOnHover: true
+  		,navLeftTxt: '&lt;'
+  		,navRightTxt: '&gt;'
+  		,zIndex:20
+  		,ease: 'linear'
+  	}
+	,as = $('#papers1').paperSlider(defaults)
+	,count = 2
+	
+	//destroy
+	$('#o-btn-des').click(function() {
+		as.destroy()
+	})
+	
+	//resize wrapper
+	$('#o-btn-cs').click(function() {
+		$('#papers1').css('width', 600)
+	})
+	
+	//resize wrapper
+	$('#o-btn-ns').click(function() {
+		var t = '<div class="papers-demo mgtb" id="papers' + ++count +'">' + 
+		($('#papers1 .paper-slides').length?$('#papers1 .paper-slides').html():$('#papers1').html()) + 
+		'</div>'
+		$('#wrapper').append(t)
+		$('#papers' + count).paperSlider(defaults)
+	})
+})
+
+</script> 
+<script>
+var _gaq=[["_setAccount","UA-18213564-1"],["_trackPageview"]];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+s.parentNode.insertBefore(g,s)}(document,"script"));
+</script>
+
+<!-- end scripts --> 
+
+</body>
+</html>
