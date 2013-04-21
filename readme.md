@@ -2,13 +2,9 @@
 
 jQuery Paper Slider is a simple “paper effect” slider plugin for jQuery.
 
-## doc
+## doc & demo
 
-<a class="btn btn-c btn-corner btn-inline with-icon-info" href="http://html5beta.com/jquery-2/jquery-paper-slider/">docs</a>
-
-## demo
-
-<a href="http://html5beta.com/demo/paper-slider.js/">http://html5beta.com/demo/paper-slider.js/</a>
+<a href="http://html5beta.com/paper-slider/">paper-slider.js</a>
 
 ## license
 
