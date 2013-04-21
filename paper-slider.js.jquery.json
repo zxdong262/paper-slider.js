@@ -1,0 +1,33 @@
+{
+    "name": "paper-slider.js",
+    "title": "jQuery paper Slider",
+    "description": "a paper effect slider jQuery plugin.",
+    "keywords": [
+        "paper",
+        "slider"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "ZHAO Xudong",
+        "url": "http://html5beta.com"
+    },
+    "maintainers": [
+        {
+            "name": "ZHAO Xudong",
+            "email": "zxdong@gmail.com",
+            "url": "http://html5beta.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/zxdong262/paper-slider.js/blob/master/mit-license.txt"
+        }
+    ],
+    "bugs": "https://github.com/zxdong262/paper-slider.js/issues",
+    "homepage": "http://html5beta.com/jquery-2/jquery-paper-slider/",
+    "docs": "http://html5beta.com/jquery-2/jquery-paper-slider/",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
