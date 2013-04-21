@@ -1,9 +1,8 @@
 /* ------------------------------------------------------------------------
     plugin-name:jQuery Paper Slider
     Developped By: ZHAO Xudong, zxdong@gmail.com -> http://html5beta.com/jquery-2/jquery-paper-slider/
-    Version: 1.1
-    Copyright: Feel free to redistribute the script/modify it, as
-               long as you leave my infos at the top.
+    Version: 1.0.0
+    License: MIT
 ------------------------------------------------------------------------ */
 
 (function($){
