@@ -6,7 +6,7 @@
         "paper",
         "slider"
     ],
-    "version": "1.0.4",
+    "version": "1.0.5",
     "author": {
         "name": "ZHAO Xudong",
         "email": "zxdong@gmail.com",
@@ -28,6 +28,7 @@
     "bugs": "https://github.com/zxdong262/paper-slider.js/issues",
     "homepage": "http://html5beta.com/paper-slider/",
     "docs": "http://html5beta.com/paper-slider/",
+    "demo": "http://html5beta.com/paper-slider/",
     "dependencies": {
         "jquery": ">=1.7"
     }
