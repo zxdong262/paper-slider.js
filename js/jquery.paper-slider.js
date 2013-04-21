@@ -148,7 +148,7 @@
 			var t = this
 			clearTimeout(t.flag)
 			t.ps.unwrap()
-			t.t.removeAttr('style').children('.ps-nav').remove()
+			t.t.off( 'click', '**' ).removeAttr('style').children('.ps-nav').remove()
 			t.t.children('.paper-slide').removeAttr('style').removeClass('paper-slide')
 			$.each( t, function( key, value ) {
 				t[key] = null
