@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------------
     plugin-name:jQuery Paper Slider
     Developped By: ZHAO Xudong, zxdong@gmail.com -> http://html5beta.com/jquery-2/jquery-paper-slider/
-    Version: 1.0.0
+    Version: 1.0.6
     License: MIT
 ------------------------------------------------------------------------ */
 
@@ -58,7 +58,7 @@
 		
 		//paper link
 		th.t.on('click', '.ps-link', function() {
-			if(defs.onAction) return
+			if(th.onAction) return
 			th.onAction = true
 			var i1 = parseInt($(this).data('ps-page'))
 			,i2 = (i1 + th.len) % th.len
@@ -72,20 +72,19 @@
 			th.t.append('<a href="javascript:;" class="ps-nav ps-nav-prev">' + defs.navLeftTxt +
 			'</a><a href="javascript:;" class="ps-nav ps-nav-next">' + defs.navRightTxt + '</a>')
 			.children('.ps-nav').css('z-index', defs.zIndex + 10 + th.len)
-			//console.log(th.t.children('.ps-nav').eq(0).css())
 			th.t.on('click', '.ps-nav', function() {
-				if(th.onAction) return
-				th.onAction = true
-				var isNext = $(this).hasClass('ps-nav-next')
-				,len = th.len
-				,i = isNext? (th.currentPage + 1 + len) % len : (th.currentPage - 1 + len) % len 
-				th.action(isNext, i)
+			  if(th.onAction) return
+  			th.onAction = true
+  			var isNext = $(this).hasClass('ps-nav-next')
+  			,len = th.len
+  			,i = isNext? (th.currentPage + 1 + len) % len : (th.currentPage - 1 + len) % len 
+  			th.action(isNext, i)
 			})
 		}
 	}
 	
 	PS.prototype = {
-		action: function(isNext,index) {
+	  action: function(isNext,index) {
 			var th = this
 			,defs = th.defs
 			,speed = defs.speed
@@ -129,18 +128,16 @@
 		}
 		,autoroll: function() {
 			var t = this
-			if(!t.onAction) {
-				if(t.pause) {
-					clearTimeout(t.flag)
-					t.flag = setTimeout(function() {
-						t.autoroll()
-					}, t.defs.timer)
-				}
-				else {
+			if(!t.onAction && !t.pause) {
 				  t.onAction = true
 				  var i = (t.currentPage + 1 + t.len) % t.len
 				  if(!t.pause) t.action(true,i)
-				}
+			}
+			else {
+				clearTimeout(t.flag)
+				t.flag = setTimeout(function() {
+					t.autoroll()
+				}, t.defs.timer)
 			}
 		}
 		,destroy: function() {
