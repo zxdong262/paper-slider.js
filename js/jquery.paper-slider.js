@@ -38,7 +38,7 @@
 		th.currentPage = 0
 
 		//init z-index
-		th.ps.eq(0).css('z-index', defs.zIndex + 1)
+		th.ps.eq(0).css('z-index', defs.zIndex + 1).end().filter(':odd').addClass('ps-odd')
 		
 		//auto start
 		if(th.defs.autoSlider) {
@@ -47,14 +47,14 @@
 			}, defs.timer)
 		}
 		
-		//pauseOnHover
-		if(defs.pauseOnHover) {
-			th.t.hover(function() {
-				th.pause = true
-			},function() {
-				th.pause = false
-			})
-		}
+		//OnHover
+		th.t.hover(function() {
+		  $(this).addClass('ps-hover')
+			if(defs.pauseOnHover) th.pause = true
+		},function() {
+		  $(this).removeClass('ps-hover')
+			if(defs.pauseOnHover) th.pause = false
+		})
 		
 		//paper link
 		th.t.on('click', '.ps-link', function() {
