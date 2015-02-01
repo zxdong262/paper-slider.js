@@ -1,0 +1,14 @@
+{
+  "name": "jquery.paper-slider.js"
+  ,"scripts": {
+    "start": "node app.js"
+  }
+  ,"version": "1.0.8"
+  ,"devDependencies": {
+    "grunt": "~0.4.x"
+    ,"grunt-contrib-uglify": "*"
+    ,"grunt-newer": "*"
+    ,"express": "4.x"
+  }
+}
+

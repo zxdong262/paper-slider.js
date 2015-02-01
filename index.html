@@ -7,7 +7,6 @@
 <meta name="description" content="Basic Dev Template">
 
 <!-- css -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="http://zxdong262.github.io/zui/css/zui.css" />
 <style>
 body {
@@ -152,7 +151,7 @@ h1, h2 {
 
 <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.1.min.js"></script>  
 <script src="http://zxdong262.github.io/zui/js/zui.js"></script>
-<script src="js/jquery.paper-slider.min.js"></script> 
+<script src="js/jquery.paper-slider.js"></script> 
 <script>
 //scripts
 $(document).ready(function() {
@@ -218,6 +217,18 @@ $(document).ready(function() {
   		,navRightTxt: '&gt;'
   		,zIndex:20
   		,ease: 'linear'
+  		,beforeAction: function() {
+  			//this refers to DS instance
+  			this.t.css({
+  				background: '#08c'
+  			})
+  		}
+  		,afterAction: function() {
+  			this.t.css({
+  				background: '#eee'
+  			})
+  			//this refers to DS instance
+  		}
   	}
 	,as = $('#papers1').paperSlider(defaults)
 	,count = 2
@@ -244,13 +255,7 @@ $(document).ready(function() {
 
 </script> 
 <script>
-var _gaq=[["_setAccount","UA-18213564-1"],["_trackPageview"]];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-s.parentNode.insertBefore(g,s)}(document,"script"));
-</script>
 
-<!-- end scripts --> 
 
 </body>
 </html>

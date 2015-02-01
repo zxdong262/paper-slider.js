@@ -17,6 +17,8 @@
 			,navRightTxt: '&gt;'
 			,zIndex:20
 			,ease: 'linear'
+			,beforeAction: null
+			,afterAction: null
 		}
 		,th = this
 		,defs = th.defs = $.extend(defaults, opts)
@@ -102,6 +104,7 @@
 			ps.filter(function() {
 			  return !$(this).hasClass('ps-on')
 			}).css('z-index', defs.zIndex)
+			$.isFunction(th.defs.beforeAction) && th.defs.beforeAction.call(th)
 			cp.animate({
 				left: -step + '%'
 			}, speed, defs.ease, function() {
@@ -118,6 +121,7 @@
 				}, speed)
 				th.currentPage = index
 				th.onAction = false
+				$.isFunction(th.defs.afterAction) && th.defs.afterAction.call(th)
 				if(defs.autoSlider) {
 					clearTimeout(th.flag)
 					th.flag = setTimeout(function() {
@@ -147,7 +151,7 @@
 			t.t.off( 'click', '**' ).removeAttr('style').children('.ps-nav').remove()
 			t.t.children('.paper-slide').removeAttr('style').removeClass('paper-slide')
 			$.each( t, function( key, value ) {
-				t[key] = null
+				delete t[key]
 			})
 		}
 		
